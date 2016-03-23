@@ -1,0 +1,61 @@
+﻿@model BucketList.Models.MyList
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="container  ">
+    <div class="jumbotron contactMain">
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+           
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Goals)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Goals)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Checked)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Checked)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateCreated)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateAccomplished)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateAccomplished)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+        </div>
+    </div>

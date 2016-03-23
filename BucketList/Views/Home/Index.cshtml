@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!-- Header -->
+<header id="top" class="header">
+    <div class="col-md-8 col-md-offset-2 btnScrollDiv">
+        <a href="#Top" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
+    </div>
+</header>
+<!-- Top 10 Goals -->
+<section id="Top" class="Topclass">
+    <div class="container info">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Do things you might regret not doing.</h2>
+                <p class="lead">Create your own Bucket List and have fun!</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+
+    <div >
+        @{Html.RenderAction("IndexTop", "Home");}
+        @{Html.RenderAction("ShareList", "Home");}
+
+
+    </div>
+
+
+
+</section>
+
+
+
+

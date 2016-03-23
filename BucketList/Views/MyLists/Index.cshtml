@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNet.Identity
+@using System.Security.Claims
+@model IEnumerable<BucketList.Models.MyList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container  " id="Top">
+    <div class="jumbotron MyListMain">
+   <div class="row">
+
+            <div class="col-lg-12 ">
+             
+
+                @if (Request.IsAuthenticated)
+                {
+                    var identity = (ClaimsIdentity)User.Identity;
+                    var name = identity.FindFirstValue(ClaimTypes.GivenName) ?? identity.GetUserName();
+
+
+                    <h2> @Html.DisplayName(name + "'s BucketList")</h2>
+                }
+
+                @Html.ActionLink("Create New", "Create", "MyLists", new { @class = "btn btn-warning btn-lg ", @style = "margin-bottom:10px;" })
+                <div style="float:right;">
+                    @Html.ActionLink("Back to Home", "Index","Home")
+                </div>
+
+                <table class="table table-responsive  ">
+
+                    <tr class="mainMyList">
+                        <th>
+                            @Html.DisplayNameFor(model => model.Goals)
+                        </th>
+
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateCreated)
+                        </th>
+                        
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateAccomplished)
+                        </th>
+                        <th>
+                            <i class="fa fa-check-square-o fa-fw fa-2x"></i>  
+                        </th>
+                       
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+            {
+                        <tr class="mainMyList">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Goals)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateCreated)
+                            </td>                           
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateAccomplished)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Checked)
+                            </td>
+                            
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>

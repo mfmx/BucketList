@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<BucketList.Models.ShareIdea>
+
+<div class="col-lg-4 col-lg-offset-1">
+    <h3>Share your BucketList goal with others!</h3>
+    <table class="table table-responsive table-hover tableS " style="table-layout: fixed;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShareIdeas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comments)
+                </th>
+                <th>
+                    @Html.ActionLink("Add Goal", "CreateShareList", "Home", new { @class="btn btn-primary"})
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="word-wrap: break-word">
+                        @Html.DisplayFor(modelItem => item.ShareIdeas)
+                    </td>
+                    <td style="word-wrap: break-word">
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@*<div class="col-lg-4 col-lg-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <ul>
+                <li>  <h3 class="panel-title"><i class="fa fa-list-ul fa-fw"></i> @Html.DisplayNameFor(model => model.ShareIdeas)</h3></li>
+                <li>   <h3 class="panel-title"><i class="fa fa-list-ul fa-fw"></i> @Html.DisplayNameFor(model => model.Comments)</h3></li>
+            </ul>
+        </div>
+
+        <div class="panel-body">
+            @foreach (var item in Model)
+            {
+                <div class="list-group">
+                    <ul>
+                        <li>@Html.DisplayFor(modelItem => item.ShareIdeas)</li>
+                        <li>  @Html.DisplayFor(modelItem => item.Comments) </li>
+                    <hr />
+                        </ul>
+                </div>
+            }
+        </div>
+
+    </div><p>
+    @Html.ActionLink("Create New", "CreateShareList")
+</p>
+</div>*@
