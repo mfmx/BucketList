@@ -54,9 +54,7 @@ namespace BucketList.Controllers
             return View();
         }
 
-        // POST: MyLists/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Goals,DateCreated")] MyList myList)
@@ -89,9 +87,7 @@ namespace BucketList.Controllers
             return View(myList);
         }
 
-        // POST: MyLists/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Goals,Checked,DateAccomplished, DateCreated")] MyList myList)

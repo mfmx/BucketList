@@ -51,9 +51,7 @@ namespace BucketList.Controllers
             return View();
         }
 
-        // POST: ShareIdeas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateShareList([Bind(Include = "Id,ShareIdeas,Comments")] ShareIdea shareIdea)
