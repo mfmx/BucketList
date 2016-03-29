@@ -35,7 +35,7 @@ namespace BucketList.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("Dont wait until it is too late.", result.ViewBag.Message);
         }
 
         [TestMethod]
