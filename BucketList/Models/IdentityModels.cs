@@ -30,7 +30,11 @@ namespace BucketList.Models
             return new ApplicationDbContext();
         }
 
-      
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            base.OnModelCreating(modelBuilder);
+        }
 
         public DbSet<MyList> MyLists { get; set; }
 
